@@ -1,0 +1,37 @@
+<head>
+<title>Credit Calculator by ZWRSS</title>
+</head>
+<body>
+
+  <div class="credit-params">
+    <span class="label credit-value">
+      Credit value: 
+      <input type="text" class="credit-params credit-value" id="credit-value" value="1000.0">
+    </span>
+    <span class="label credit-interest">
+      Credit interest [%]: 
+      <input type="text" class="credit-params credit-interest" id="credit-interest" value="5">
+    </span>
+  </div>
+  
+  <div class="credit-functions">
+    <span class="label credit-function">
+      Months:
+      <input type="text" class="credit-function months" id="credit-months" value="12">
+      <button class="credit-function" id="credit-onetime" value="One Time">One Time</button>
+      <button class="credit-function" id="credit-monthly" value="Monthly">Monthly</button>
+    </span>
+    <span class="label credit-function">
+      Initial rate:
+      <input type="text" class="credit-function rate" id="credit-rate" value="100.0">
+      <button class="credit-function" id="credit-fixed-rate" value="Fixed rate">Fixed rate</button>
+    </span>
+  </div>
+  
+  <button class="credit-function" id="credit-clean" value="Clean">Clean</button>
+	  
+  <div id="credit-table" class="credit-table">
+  </div>
+  
+  <script src="script.js"></script>
+</body>
