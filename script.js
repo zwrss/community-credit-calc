@@ -54,7 +54,9 @@ var Credit = function(amount, interest) {
 }
 
 function getAmount() {
-  return parseFloat(document.getElementById("credit-value").value);
+  var am = parseFloat(document.getElementById("credit-value").value);
+  var co = parseFloat(document.getElementById("credit-commision").value);
+  return am * 100 / (100 - co);
 }
 
 function getInterest() {
@@ -104,6 +106,8 @@ function creditOneTime() {
   var rate = c.calculateOneTime(getMonths());
   var p = document.createElement("SPAN");
   var x = document.createElement("P");
+  x.appendChild(document.createTextNode("Credit value: " + c.amount));
+  p.appendChild(x)
   x.appendChild(document.createTextNode("One time rate for credit: " + rate));
   p.appendChild(x)
   x = document.createElement("P");
@@ -116,6 +120,9 @@ function creditMontly() {
   var c = new Credit(getAmount(), getInterest());
   var rate = c.calculateMonthly(getMonths());
   var p = document.createElement("SPAN");
+  var x = document.createElement("P");
+  x.appendChild(document.createTextNode("Credit value: " + c.amount));
+  p.appendChild(x)
   var counter = 0;
   var ratesMinimized = [];
   rate.forEach(function (r) {
@@ -151,6 +158,9 @@ function creditFixedRate() {
   var c = new Credit(getAmount(), getInterest());
   var rate = c.calculateForRate(getRate());
   var p = document.createElement("SPAN");
+  var x = document.createElement("P");
+  x.appendChild(document.createTextNode("Credit value: " + c.amount));
+  p.appendChild(x)
   var counter = 0;
   var ratesMinimized = [];
   rate.forEach(function (r) {
